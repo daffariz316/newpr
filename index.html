@@ -70,48 +70,31 @@
             color: #667eea;
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 30px;
+        .navbar-marquee {
+            width: 100%;
+            overflow: hidden;    /* supaya teks tidak keluar */
+            white-space: nowrap;
+            padding: 10px 0;
+            /* border-bottom: 1px solid #ddd; */
         }
 
-        .nav-menu a {
-            text-decoration: none;
-            color: #333;
+        .marquee-content {
+            display: inline-block;
+            padding-left: 100%; /* mulai dari luar layar */
+            animation: marquee 12s linear infinite;
+            font-size: 18px;
             font-weight: 500;
-            transition: color 0.3s;
+            color: #333;
+        }
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
         }
 
-        .nav-menu a:hover {
-            color: #667eea;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            transition: all 0.3s;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
 
         /* Main Content */
         main {
@@ -123,7 +106,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.98);
+            /* background: rgba(255, 255, 255, 0.98); */
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             padding: 50px;
@@ -151,17 +134,80 @@
 
         .hero h1 {
             font-size: 3em;
-            color: #333;
+            color: #eee;
             margin-bottom: 15px;
         }
 
         .hero p {
             font-size: 1.3em;
-            color: #666;
+            color: #eee;
             margin-bottom: 30px;
         }
 
-        /* TAMBAHAN: Hero Image/Video */
+        /* Menu Grid - NEW */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+            padding: 20px 0;
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            border-color: #FF6B35;
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+        }
+
+        .menu-icon {
+            width: 80px;
+            height: 80px;
+            background: #FF6B35;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .menu-icon svg {
+            width: 50px;
+            height: 50px;
+            fill: white;
+        }
+
+        .menu-item:hover .menu-icon {
+            background: #E55A2B;
+            transform: scale(1.1);
+        }
+
+        .menu-item.target .menu-icon {
+            border-radius: 50%;
+        }
+
+        .menu-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #FF6B35;
+            margin: 0;
+        }
+
+        /* Hero Media */
         .hero-media {
             margin: 30px auto;
             max-width: 800px;
@@ -223,7 +269,7 @@
 
         .section h2 {
             font-size: 2.2em;
-            color: #333;
+            color: #eee;
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 15px;
@@ -244,180 +290,6 @@
             line-height: 1.8;
             margin-bottom: 20px;
             font-size: 1.1em;
-        }
-
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .feature-card {
-            background: white;
-            border: 2px solid #eee;
-            padding: 30px;
-            border-radius: 15px;
-            transition: all 0.3s;
-            text-align: center;
-        }
-
-        .feature-card:hover {
-            border-color: #667eea;
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h3 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .feature-card p {
-            color: #666;
-            font-size: 1em;
-        }
-
-        /* Stats Section */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-            text-align: center;
-        }
-
-        .stat-item {
-            padding: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            color: white;
-            transition: transform 0.3s;
-        }
-
-        .stat-item:hover {
-            transform: scale(1.05);
-        }
-
-        .stat-number {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-
-        /* Team Section */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .team-member {
-            text-align: center;
-            padding: 30px;
-            background: #f9f9f9;
-            border-radius: 15px;
-            transition: all 0.3s;
-        }
-
-        .team-member:hover {
-            background: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .team-avatar {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            color: white;
-        }
-
-        .team-member h3 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .team-member p {
-            color: #666;
-            font-size: 0.95em;
-        }
-
-        /* Testimonials */
-        .testimonial {
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 20px 0;
-            border-left: 5px solid #667eea;
-        }
-
-        .testimonial p {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 40px auto 0;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
         }
 
         /* Footer */
@@ -455,6 +327,12 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -492,6 +370,29 @@
             .section h2 {
                 font-size: 1.8em;
             }
+
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .menu-item {
+                padding: 20px 15px;
+            }
+
+            .menu-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .menu-icon svg {
+                width: 35px;
+                height: 35px;
+            }
+
+            .menu-title {
+                font-size: 0.95em;
+            }
         }
     </style>
 </head>
@@ -499,7 +400,8 @@
     <!-- Video Background -->
     <div class="video-background">
         <video autoplay muted loop playsinline>
-            <source src="assets/CFD Kota Bekasi (Video Drone Gratis) (1).mp4" type="video/mp4">
+            <source src="assets/CFD Kota Bekasi (Video Drone Gratis) (1).mp4
+            " type="video/mp4">
         </video>
     </div>
 
@@ -507,17 +409,10 @@
     <nav>
         <div class="nav-container">
             <div class="logo">MyBrand</div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#tentang">Tentang</a></li>
-                <li><a href="#layanan">Layanan</a></li>
-                <li><a href="#tim">Tim</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="navbar-marquee">
+                <div class="marquee-content">
+                    halo saya daffarizqy
+                </div>
             </div>
         </div>
     </nav>
@@ -530,166 +425,104 @@
                 <h1>Selamat Datang di Website Kami</h1>
                 <p>Solusi Digital Terbaik untuk Bisnis Anda</p>
                 
-                <!-- TAMBAHAN: Foto/Video di Hero Section -->
-                <div class="hero-media">
-                    <!-- PILIHAN 1: Gunakan Gambar -->
-                    <!-- <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Digital Solutions"> -->
-                    
-                    <!-- PILIHAN 2: Gunakan Video (hapus tag img di atas, uncomment video di bawah) -->
+                <!-- <div class="hero-media">
                     <video autoplay muted loop playsinline>
-                        <source src="assets/CFD Kota Bekasi (Video Drone Gratis) (1).mp4" type="video/mp4">
+                        <source src="https://cdn.coverr.co/videos/coverr-woman-working-on-a-laptop-4980/1080p.mp4" type="video/mp4">
                     </video>
-                </div>
-                
-                <div class="hero-buttons">
-                    <a href="#layanan" class="btn btn-primary">Lihat Layanan</a>
-                    <a href="#kontak" class="btn btn-secondary">Hubungi Kami</a>
+                </div> -->
+            </section>
+
+            <!-- Menu Grid Section -->
+            <section class="section" id="menu">
+                <h2>Menu Layanan</h2>
+                <div class="menu-grid">
+                    <!-- BPHTB -->
+                    <a href="#bphtb" class="menu-item">
+                        <div class="menu-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm10 16H5V4h2v9l3-2.25L13 13V4h6v16z"/>
+                            </svg>
+                        </div>
+                        <h3 class="menu-title">BPHTB</h3>
+                    </a>
+
+                    <!-- SSPB -->
+                    <a href="#sspb" class="menu-item">
+                        <div class="menu-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="menu-title">SSPB</h3>
+                    </a>
+
+                    <!-- PADL -->
+                    <a href="#padl" class="menu-item">
+                        <div class="menu-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="menu-title">PADL</h3>
+                    </a>
+
+                    <!-- POSPBB -->
+                    <a href="#pospbb" class="menu-item">
+                        <div class="menu-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="menu-title">POSPBB</h3>
+                    </a>
+
+                    <!-- PBB Monitoring -->
+                    <a href="#pbb-monitoring" class="menu-item">
+                        <div class="menu-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 2h1.5v2H12V4zm0 4h1.5v4H12V8zM5 20V4h5v8l2.5-1.5L15 12V4h4v16H5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="menu-title">PBB Monitoring</h3>
+                    </a>
+
+                    <!-- PBB Migrasi -->
+                    <a href="#pbb-migrasi" class="menu-item target">
+                        <div class="menu-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="8"/>
+                                <circle cx="12" cy="12" r="5"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="menu-title">PBB Migrasi</h3>
+                    </a>
+
+                    <!-- EIS -->
+                    <a href="#eis" class="menu-item">
+                        <div class="menu-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm10 16H5V4h2v9l3-2.25L13 13V4h6v16z"/>
+                            </svg>
+                        </div>
+                        <h3 class="menu-title">EIS</h3>
+                    </a>
+
+                    <!-- PBB Pelayanan -->
+                    <a href="#pbb-pelayanan" class="menu-item target">
+                        <div class="menu-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="8"/>
+                                <circle cx="12" cy="12" r="5"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="menu-title">PBB Pelayanan</h3>
+                    </a>
                 </div>
             </section>
 
-            <!-- Stats Section -->
-            <section class="section">
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Proyek Selesai</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">300+</div>
-                        <div class="stat-label">Klien Puas</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Penghargaan</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Tahun Pengalaman</div>
-                    </div>
-                </div>
-            </section>
 
-            <!-- About Section -->
-            <section class="section" id="tentang">
-                <h2>Tentang Kami</h2>
-                <p>
-                    Kami adalah perusahaan teknologi yang berfokus pada pengembangan solusi digital inovatif untuk membantu bisnis Anda berkembang di era modern. Dengan tim profesional yang berpengalaman lebih dari 10 tahun, kami telah membantu ratusan perusahaan mencapai transformasi digital mereka.
-                </p>
-                <p>
-                    Filosofi kami sederhana: memberikan solusi berkualitas tinggi dengan pendekatan yang personal dan hasil yang terukur. Kami tidak hanya membangun produk, tetapi juga membangun hubungan jangka panjang dengan setiap klien kami.
-                </p>
-                <p>
-                    Dari startup hingga perusahaan enterprise, kami memiliki pengalaman bekerja dengan berbagai industri termasuk e-commerce, fintech, healthcare, pendidikan, dan masih banyak lagi. Kepercayaan klien adalah aset terbesar kami.
-                </p>
-            </section>
-
-            <!-- Services Section -->
-            <section class="section" id="layanan">
-                <h2>Layanan Kami</h2>
-                <p>Kami menawarkan berbagai layanan digital yang komprehensif untuk memenuhi kebutuhan bisnis Anda</p>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🎨</div>
-                        <h3>Web Design</h3>
-                        <p>Desain website modern, responsif, dan user-friendly yang meningkatkan konversi dan engagement pengunjung Anda</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💻</div>
-                        <h3>Web Development</h3>
-                        <p>Pengembangan aplikasi web custom dengan teknologi terkini seperti React, Node.js, dan cloud infrastructure</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📱</div>
-                        <h3>Mobile App</h3>
-                        <p>Aplikasi mobile native dan hybrid untuk iOS dan Android dengan performa optimal dan UX yang excellent</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🚀</div>
-                        <h3>Digital Marketing</h3>
-                        <p>Strategi marketing digital lengkap termasuk SEO, SEM, social media marketing, dan content marketing</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Brand Strategy</h3>
-                        <p>Konsultasi dan pengembangan strategi brand yang kuat untuk membedakan bisnis Anda dari kompetitor</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3>Cyber Security</h3>
-                        <p>Solusi keamanan cyber lengkap untuk melindungi data dan aset digital perusahaan Anda dari ancaman</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Team Section -->
-            <section class="section" id="tim">
-                <h2>Tim Profesional Kami</h2>
-                <p>Bertemu dengan orang-orang berbakat di balik kesuksesan kami</p>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="team-avatar">👨‍💼</div>
-                        <h3>Budi Santoso</h3>
-                        <p>CEO & Founder</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-avatar">👩‍💻</div>
-                        <h3>Sarah Wijaya</h3>
-                        <p>Lead Developer</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-avatar">👨‍🎨</div>
-                        <h3>Ahmad Rizki</h3>
-                        <p>UI/UX Designer</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-avatar">👩‍💼</div>
-                        <h3>Lisa Kartika</h3>
-                        <p>Marketing Manager</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Testimonials Section -->
-            <section class="section">
-                <h2>Apa Kata Mereka?</h2>
-                <div class="testimonial">
-                    <p>"Bekerja sama dengan tim ini adalah pengalaman yang luar biasa. Mereka sangat profesional dan hasilnya melebihi ekspektasi kami. Website kami sekarang jauh lebih modern dan konversi meningkat 150%!"</p>
-                    <div class="testimonial-author">- Andi Prasetyo, CEO TechStart Indonesia</div>
-                </div>
-                <div class="testimonial">
-                    <p>"Aplikasi mobile yang mereka kembangkan sangat user-friendly dan stabil. Tim support mereka juga sangat responsif. Highly recommended untuk siapa saja yang butuh solusi digital berkualitas!"</p>
-                    <div class="testimonial-author">- Siti Nurhaliza, Founder EduApp</div>
-                </div>
-                <div class="testimonial">
-                    <p>"Dari konsultasi awal hingga deployment, prosesnya sangat smooth. Mereka benar-benar mendengarkan kebutuhan kami dan memberikan solusi yang tepat. ROI yang kami dapatkan sangat memuaskan."</p>
-                    <div class="testimonial-author">- Michael Tan, Director of Operations</div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section class="section" id="kontak">
-                <h2>Hubungi Kami</h2>
-                <p>Punya proyek dalam pikiran? Mari diskusikan bagaimana kami bisa membantu!</p>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label>Nama Lengkap</label>
-                        <input type="text" placeholder="Masukkan nama Anda" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" placeholder="email@contoh.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Nomor Telepon</label>
-                        <input type="tel" placeholder="+62 812 3456 7890">
-                    </div>
-                    <div class="form-group">
-                        <label>Pesan</label>
-                        <textarea placeholder="Ceritakan tentang proyek Anda..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
-                </form>
-            </section>
 
             <!-- Footer -->
             <footer>
@@ -737,11 +570,13 @@
             });
         });
 
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
-            e.target.reset();
+        // Menu item click handler
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const title = item.querySelector('.menu-title').textContent;
+                alert(`Anda memilih menu: ${title}`);
+            });
         });
     </script>
 </body>
