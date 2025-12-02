@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Modern</title>
+    <title>Website Modern - Kota Bekasi</title>
     <style>
         * {
             margin: 0;
@@ -65,27 +65,50 @@
         }
 
         .logo {
-            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .main-title {
+            font-size: 1.4em;
             font-weight: bold;
-            color: #667eea;
+            color: #2563eb;
+            line-height: 1.2;
+        }
+
+        .logo-text .sub-title {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 500;
         }
 
         .navbar-marquee {
             width: 100%;
-            overflow: hidden;    /* supaya teks tidak keluar */
+            overflow: hidden;
             white-space: nowrap;
             padding: 10px 0;
-            /* border-bottom: 1px solid #ddd; */
         }
 
         .marquee-content {
             display: inline-block;
-            padding-left: 100%; /* mulai dari luar layar */
+            padding-left: 100%;
             animation: marquee 12s linear infinite;
             font-size: 18px;
             font-weight: 500;
             color: #333;
         }
+
         @keyframes marquee {
             from {
                 transform: translateX(0);
@@ -94,7 +117,6 @@
                 transform: translateX(-100%);
             }
         }
-
 
         /* Main Content */
         main {
@@ -106,7 +128,6 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            /* background: rgba(255, 255, 255, 0.98); */
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             padding: 50px;
@@ -128,7 +149,7 @@
         .hero {
             text-align: center;
             padding: 40px 0;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #2563eb;
             margin-bottom: 50px;
         }
 
@@ -144,10 +165,10 @@
             margin-bottom: 30px;
         }
 
-        /* Menu Grid - NEW */
+        /* Menu Grid */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin: 50px 0;
             padding: 20px 0;
@@ -176,8 +197,6 @@
         .menu-icon {
             width: 80px;
             height: 80px;
-            background: #FF6B35;
-            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -186,18 +205,12 @@
         }
 
         .menu-icon svg {
-            width: 50px;
-            height: 50px;
-            fill: white;
+            width: 100%;
+            height: 100%;
         }
 
         .menu-item:hover .menu-icon {
-            background: #E55A2B;
             transform: scale(1.1);
-        }
-
-        .menu-item.target .menu-icon {
-            border-radius: 50%;
         }
 
         .menu-title {
@@ -207,59 +220,43 @@
             margin: 0;
         }
 
-        /* Hero Media */
-        .hero-media {
-            margin: 30px auto;
-            max-width: 800px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        /* Style khusus untuk setiap menu item */
+        .menu-item:nth-child(1) .menu-title {
+            font-family: 'Georgia', serif;
+            color: #e63946;
         }
 
-        .hero-media img,
-        .hero-media video {
-            width: 100%;
-            height: auto;
-            display: block;
+        .menu-item:nth-child(3) .menu-title {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-weight: 700;
+            color: #06a77d;
+            text-transform: uppercase;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .menu-item:nth-child(4) .menu-title {
+            font-family: 'Arial Black', sans-serif;
+            color: #9d4edd;
+            font-size: 1em;
         }
 
-        .btn {
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
+        .menu-item:nth-child(5) .menu-title {
+            font-family: 'Verdana', sans-serif;
+            font-weight: 500;
+            color: #d62828;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .menu-item:nth-child(7) .menu-title {
+            font-family: 'Comic Sans MS', cursive;
             font-weight: bold;
-            transition: all 0.3s;
-            display: inline-block;
+            color: #e76f51;
+            font-size: 1.15em;
         }
 
-        .btn-primary {
-            background: #667eea;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #5568d3;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-3px);
+        .menu-item:nth-child(8) .menu-title {
+            font-family: 'Arial Black', sans-serif;
+            color: #c1121f;;
+            font-size: 1em;
         }
 
         /* Content Sections */
@@ -282,14 +279,7 @@
             left: 0;
             width: 80px;
             height: 4px;
-            background: #667eea;
-        }
-
-        .section p {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.1em;
+            background: #2563eb;
         }
 
         /* Footer */
@@ -310,7 +300,7 @@
         .social-links a {
             width: 50px;
             height: 50px;
-            background: #667eea;
+            background: #2563eb;
             color: white;
             display: flex;
             align-items: center;
@@ -322,7 +312,7 @@
         }
 
         .social-links a:hover {
-            background: #764ba2;
+            background: #1d4ed8;
             transform: translateY(-5px);
         }
 
@@ -334,27 +324,6 @@
         }
 
         @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: absolute;
-                top: 70px;
-                left: -100%;
-                flex-direction: column;
-                background: rgba(255, 255, 255, 0.98);
-                width: 100%;
-                padding: 20px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                transition: left 0.3s;
-                gap: 15px;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
             .hero h1 {
                 font-size: 2em;
             }
@@ -385,11 +354,6 @@
                 height: 60px;
             }
 
-            .menu-icon svg {
-                width: 35px;
-                height: 35px;
-            }
-
             .menu-title {
                 font-size: 0.95em;
             }
@@ -400,15 +364,20 @@
     <!-- Video Background -->
     <div class="video-background">
         <video autoplay muted loop playsinline>
-            <source src="assets/CFD Kota Bekasi (Video Drone Gratis) (1).mp4
-            " type="video/mp4">
+            <source src="assets/CFD Kota Bekasi (Video Drone Gratis) (1).mp4" type="video/mp4">
         </video>
     </div>
 
     <!-- Navbar -->
     <nav>
         <div class="nav-container">
-            <div class="logo">MyBrand</div>
+            <div class="logo">
+                <img src="assets/1655277937_e56f28c12f8525344c88.png" alt="Logo Kota Bekasi">
+                <div class="logo-text">
+                    <span class="main-title">PEMERINTAH KOTA BEKASI</span>
+                    <span class="sub-title">Badan Pendapatan Daerah</span>
+                </div>
+            </div>
             <div class="navbar-marquee">
                 <div class="marquee-content">
                     halo saya daffarizqy
@@ -424,97 +393,206 @@
             <section class="hero" id="home">
                 <h1>Selamat Datang di Website Kami</h1>
                 <p>Solusi Digital Terbaik untuk Bisnis Anda</p>
-                
-                <!-- <div class="hero-media">
-                    <video autoplay muted loop playsinline>
-                        <source src="https://cdn.coverr.co/videos/coverr-woman-working-on-a-laptop-4980/1080p.mp4" type="video/mp4">
-                    </video>
-                </div> -->
             </section>
 
             <!-- Menu Grid Section -->
             <section class="section" id="menu">
                 <h2>Menu Layanan</h2>
                 <div class="menu-grid">
-                    <!-- BPHTB -->
+                    <!-- BPHTB dengan SVG Animasi (Dokumen/Building) -->
                     <a href="#bphtb" class="menu-item">
                         <div class="menu-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm10 16H5V4h2v9l3-2.25L13 13V4h6v16z"/>
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <animate attributeName="x1" values="0%;100%;0%" dur="3s" repeatCount="indefinite"/>
+                                        <animate attributeName="y1" values="0%;100%;0%" dur="3s" repeatCount="indefinite"/>
+                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Dokumen surat -->
+                                <rect x="25" y="15" width="50" height="70" rx="3" fill="url(#grad1)" stroke="#333" stroke-width="2">
+                                    <animate attributeName="y" values="15;10;15" dur="2s" repeatCount="indefinite"/>
+                                </rect>
+                                <!-- Cap/stempel bundar -->
+                                <circle cx="50" cy="65" r="10" fill="none" stroke="white" stroke-width="1.5" opacity="0.8">
+                                    <animate attributeName="r" values="10;11;10" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <!-- Garis horizontal dokumen -->
+                                <line x1="32" y1="28" x2="68" y2="28" stroke="white" stroke-width="1.5">
+                                    <animate attributeName="x2" values="32;68;32" dur="2s" repeatCount="indefinite"/>
+                                </line>
+                                <line x1="32" y1="38" x2="68" y2="38" stroke="white" stroke-width="1.5">
+                                    <animate attributeName="x2" values="32;68;32" dur="2s" repeatCount="indefinite" begin="0.2s"/>
+                                </line>
+                                <line x1="32" y1="48" x2="60" y2="48" stroke="white" stroke-width="1.5">
+                                    <animate attributeName="x2" values="32;60;32" dur="2s" repeatCount="indefinite" begin="0.4s"/>
+                                </line>
+                                <!-- Ikon tanah/lahan di bagian atas -->
+                                <rect x="35" y="20" width="8" height="4" fill="white" opacity="0.9"/>
+                                <rect x="45" y="22" width="6" height="2" fill="white" opacity="0.9"/>
+                                <rect x="53" y="20" width="7" height="4" fill="white" opacity="0.9"/>
                             </svg>
                         </div>
                         <h3 class="menu-title">BPHTB</h3>
                     </a>
 
-                    <!-- SSPB -->
-                    <a href="#sspb" class="menu-item">
-                        <div class="menu-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="menu-title">SSPB</h3>
-                    </a>
-
-                    <!-- PADL -->
+                    <!-- PADL dengan SVG Animasi (Chart/Graph) -->
                     <a href="#padl" class="menu-item">
                         <div class="menu-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="taxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#E74C3C;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                
+                                <!-- Dokumen pajak -->
+                                <rect x="25" y="20" width="50" height="60" rx="3" fill="white" stroke="#333" stroke-width="2">
+                                    <animate attributeName="y" values="20;17;20" dur="2s" repeatCount="indefinite"/>
+                                </rect>
+                                
+                                <!-- Header dokumen -->
+                                <rect x="25" y="20" width="50" height="12" rx="3" fill="url(#taxGrad)">
+                                    <animate attributeName="y" values="20;17;20" dur="2s" repeatCount="indefinite"/>
+                                </rect>
+                                
+                                <!-- Simbol persen besar -->
+                                <text x="50" y="55" font-size="28" font-weight="bold" fill="url(#taxGrad)" font-family="Arial" text-anchor="middle">
+                                    %
+                                    <animate attributeName="y" values="55;52;55" dur="2s" repeatCount="indefinite"/>
+                                </text>
+                                
+                                <!-- Garis-garis form -->
+                                <line x1="32" y1="40" x2="68" y2="40" stroke="#ccc" stroke-width="1.5">
+                                    <animate attributeName="y1" values="40;37;40" dur="2s" repeatCount="indefinite"/>
+                                    <animate attributeName="y2" values="40;37;40" dur="2s" repeatCount="indefinite"/>
+                                </line>
+                                <line x1="32" y1="65" x2="68" y2="65" stroke="#ccc" stroke-width="1.5">
+                                    <animate attributeName="y1" values="65;62;65" dur="2s" repeatCount="indefinite"/>
+                                    <animate attributeName="y2" values="65;62;65" dur="2s" repeatCount="indefinite"/>
+                                </line>
+                                <line x1="32" y1="72" x2="55" y2="72" stroke="#ccc" stroke-width="1.5">
+                                    <animate attributeName="y1" values="72;69;72" dur="2s" repeatCount="indefinite"/>
+                                    <animate attributeName="y2" values="72;69;72" dur="2s" repeatCount="indefinite"/>
+                                </line>
+                                
+                                <!-- Tanda centang/checklist -->
+                                <circle cx="35" cy="65" r="4" fill="none" stroke="#4CAF50" stroke-width="1.5">
+                                    <animate attributeName="cy" values="65;62;65" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <path d="M 33,65 L 35,67 L 37,63" fill="none" stroke="#4CAF50" stroke-width="1.5" stroke-linecap="round">
+                                    <animate attributeName="d" values="M 33,65 L 35,67 L 37,63;M 33,62 L 35,64 L 37,60;M 33,65 L 35,67 L 37,63" dur="2s" repeatCount="indefinite"/>
+                                </path>
                             </svg>
                         </div>
                         <h3 class="menu-title">PADL</h3>
                     </a>
 
-                    <!-- POSPBB -->
+                    <!-- POSPBB dengan SVG Animasi (Location/Map Pin) -->
                     <a href="#pospbb" class="menu-item">
                         <div class="menu-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="moneyTaxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#81C784;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Lembaran uang -->
+                                <rect x="20" y="40" width="60" height="35" rx="4" fill="url(#moneyTaxGrad)" stroke="#2E7D32" stroke-width="2">
+                                    <animate attributeName="y" values="40;37;40" dur="2s" repeatCount="indefinite"/>
+                                </rect>
+                                <!-- Simbol dollar di uang -->
+                                <text x="50" y="63" font-size="22" font-weight="bold" fill="white" font-family="Arial" text-anchor="middle">
+                                    $
+                                    <animate attributeName="y" values="63;60;63" dur="2s" repeatCount="indefinite"/>
+                                </text>
+                                <!-- Dekorasi pojok uang -->
+                                <circle cx="28" cy="48" r="3" fill="white" opacity="0.6">
+                                    <animate attributeName="cy" values="48;45;48" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="72" cy="67" r="3" fill="white" opacity="0.6">
+                                    <animate attributeName="cy" values="67;64;67" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                
+                                <!-- Simbol persen pajak dengan lingkaran -->
+                                <circle cx="65" cy="30" r="12" fill="#E91E63" stroke="#C2185B" stroke-width="2">
+                                    <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <text x="65" y="36" font-size="14" font-weight="bold" fill="white" font-family="Arial" text-anchor="middle">
+                                    %
+                                </text>
+                                
+                                <!-- Tanda panah menuju uang (menunjukkan pajak dari uang) -->
+                                <line x1="60" y1="38" x2="55" y2="43" stroke="#E91E63" stroke-width="2" opacity="0.8">
+                                    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                                </line>
                             </svg>
                         </div>
                         <h3 class="menu-title">POSPBB</h3>
                     </a>
 
-                    <!-- PBB Monitoring -->
+                    <!-- PBB Monitoring dengan SVG Animasi (Monitor/Screen) -->
                     <a href="#pbb-monitoring" class="menu-item">
                         <div class="menu-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 2h1.5v2H12V4zm0 4h1.5v4H12V8zM5 20V4h5v8l2.5-1.5L15 12V4h4v16H5z"/>
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="15" y="20" width="70" height="50" rx="5" fill="#2196F3" stroke="#333" stroke-width="2"/>
+                                <rect x="20" y="25" width="60" height="40" fill="#90CAF9"/>
+                                <line x1="30" y1="35" x2="60" y2="35" stroke="#1976D2" stroke-width="2">
+                                    <animate attributeName="x2" values="30;60;30" dur="2s" repeatCount="indefinite"/>
+                                </line>
+                                <line x1="30" y1="45" x2="70" y2="45" stroke="#1976D2" stroke-width="2">
+                                    <animate attributeName="x2" values="30;70;30" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+                                </line>
+                                <line x1="30" y1="55" x2="55" y2="55" stroke="#1976D2" stroke-width="2">
+                                    <animate attributeName="x2" values="30;55;30" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+                                </line>
+                                <rect x="40" y="70" width="20" height="5" fill="#333"/>
+                                <rect x="30" y="75" width="40" height="3" rx="1.5" fill="#333"/>
                             </svg>
                         </div>
                         <h3 class="menu-title">PBB Monitoring</h3>
                     </a>
 
-                    <!-- PBB Migrasi -->
-                    <a href="#pbb-migrasi" class="menu-item target">
-                        <div class="menu-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="8"/>
-                                <circle cx="12" cy="12" r="5"/>
-                                <circle cx="12" cy="12" r="2"/>
-                            </svg>
-                        </div>
-                        <h3 class="menu-title">PBB Migrasi</h3>
-                    </a>
-
-                    <!-- EIS -->
+                    <!-- EIS dengan SVG Animasi (Dashboard/Pie Chart) -->
                     <a href="#eis" class="menu-item">
                         <div class="menu-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm10 16H5V4h2v9l3-2.25L13 13V4h6v16z"/>
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="30" fill="none" stroke="#E0E0E0" stroke-width="15"/>
+                                <circle cx="50" cy="50" r="30" fill="none" stroke="#4CAF50" stroke-width="15" stroke-dasharray="75 113" transform="rotate(-90 50 50)">
+                                    <animate attributeName="stroke-dasharray" values="0 188;75 113;0 188" dur="3s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="50" cy="50" r="30" fill="none" stroke="#2196F3" stroke-width="15" stroke-dasharray="47 141" stroke-dashoffset="-75" transform="rotate(-90 50 50)">
+                                    <animate attributeName="stroke-dasharray" values="0 188;47 141;0 188" dur="3s" repeatCount="indefinite" begin="0.3s"/>
+                                </circle>
+                                <circle cx="50" cy="50" r="30" fill="none" stroke="#FF9800" stroke-width="15" stroke-dasharray="66 122" stroke-dashoffset="-122" transform="rotate(-90 50 50)">
+                                    <animate attributeName="stroke-dasharray" values="0 188;66 122;0 188" dur="3s" repeatCount="indefinite" begin="0.6s"/>
+                                </circle>
                             </svg>
                         </div>
                         <h3 class="menu-title">EIS</h3>
                     </a>
 
-                    <!-- PBB Pelayanan -->
-                    <a href="#pbb-pelayanan" class="menu-item target">
+                    <!-- PBB Pelayanan dengan SVG Animasi (Customer Service/Headset) -->
+                    <a href="#pbb-pelayanan" class="menu-item">
                         <div class="menu-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="8"/>
-                                <circle cx="12" cy="12" r="5"/>
-                                <circle cx="12" cy="12" r="2"/>
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 30,40 Q 30,20 50,20 Q 70,20 70,40" fill="none" stroke="#00BCD4" stroke-width="5" stroke-linecap="round"/>
+                                <rect x="22" y="35" width="12" height="20" rx="3" fill="#00BCD4">
+                                    <animate attributeName="fill" values="#00BCD4;#4DD0E1;#00BCD4" dur="1.5s" repeatCount="indefinite"/>
+                                </rect>
+                                <rect x="66" y="35" width="12" height="20" rx="3" fill="#00BCD4">
+                                    <animate attributeName="fill" values="#00BCD4;#4DD0E1;#00BCD4" dur="1.5s" repeatCount="indefinite"/>
+                                </rect>
+                                <path d="M 50,55 Q 50,65 45,70 L 40,70" fill="none" stroke="#00BCD4" stroke-width="4" stroke-linecap="round">
+                                    <animate attributeName="stroke-dasharray" values="0,50;50,0" dur="2s" repeatCount="indefinite"/>
+                                </path>
+                                <circle cx="50" cy="50" r="3" fill="#FF5722">
+                                    <animate attributeName="r" values="3;5;3" dur="1s" repeatCount="indefinite"/>
+                                </circle>
                             </svg>
                         </div>
                         <h3 class="menu-title">PBB Pelayanan</h3>
@@ -522,40 +600,32 @@
                 </div>
             </section>
 
-
-
             <!-- Footer -->
             <footer>
                 <div class="social-links">
-                    <a href="#">📘</a>
-                    <a href="#">📷</a>
-                    <a href="#">🐦</a>
-                    <a href="#">💼</a>
+                    <a href="#" title="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </a>
                 </div>
-                <p style="color: #999;">&copy; 2024 MyBrand. All Rights Reserved.</p>
-                <p style="color: #bbb; font-size: 0.9em;">Jl. Teknologi No. 123, Jakarta, Indonesia | info@mybrand.com | +62 21 1234 5678</p>
+                <p style="color: #999;">&copy; 2024 Kota Bekasi. All Rights Reserved.</p>
+                <p style="color: #bbb; font-size: 0.9em;">Jl. Teknologi No. 123, Jakarta, Indonesia | info@bekasikota.go.id | +62 21 1234 5678</p>
             </footer>
         </div>
     </main>
 
     <script>
-        // Hamburger Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
