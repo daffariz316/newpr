@@ -75,17 +75,19 @@
             width: auto;
         }
 
-        .logo-text {
+       .logo-text {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* tetap column */
         }
 
         .logo-text .main-title {
-            font-size: 1.4em;
+            font-size: 1.2em;
             font-weight: bold;
             color: #2563eb;
             line-height: 1.2;
+            white-space: nowrap; /* <<< ini penting */
         }
+
 
         .logo-text .sub-title {
             font-size: 0.9em;
